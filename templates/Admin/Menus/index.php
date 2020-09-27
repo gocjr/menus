@@ -11,7 +11,7 @@ $trRows[] = 'class="d-none d-sm-none d-md-none d-lg-table-cell d-xl-table-cell"'
 
 
 $this->assign('title', $menu->title);
-$this->extend('Appearances.Admin/Common/index');
+$this->extend('Appearances./Admin/Common/index');
 ?>
 <!--table.thead.tr-->
 <?php $this->start('thread'); ?>

@@ -9,7 +9,7 @@ $trRows[] = 'class="p-0"';
 $trRows[] = 'class="text-center w-5"';
 $trRows[] = 'class="d-none d-sm-none d-md-none d-lg-table-cell d-xl-table-cell"';
 $trRows[] = '';
-$this->extend('Appearances.Admin/Common/index');
+$this->extend('Appearances./Admin/Common/index');
 ?>
 
 <?php $this->start('thread'); ?>

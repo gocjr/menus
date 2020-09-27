@@ -5,4 +5,4 @@ $colLeft = [
 ];
 
 $this->set(compact('colLeft'));
-$this->extend('Appearances.Admin/Common/form');
+$this->extend('Appearances./Admin/Common/form');
