@@ -48,8 +48,11 @@ class MenuSchema
     public static function removeTable()
     {
         $name = 'menus';
-        $db = TableRegistry::getTableLocator()->get($name)->getConnection();
-        $schema = $db->getDriver()->getSchema();
+        $tableLocator = TableRegistry::getTableLocator();
+        $table = $tableLocator->get($name);
+        $db = $table->getConnection();
+      
+        $schema = $table->getSchema();
         $sql = $schema->dropSql($db);
         $db->execute($sql);
     }

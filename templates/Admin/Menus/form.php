@@ -3,5 +3,6 @@ $colLeft = [
     'title',
     'slug'
 ];
-$this->set(compact('colLeft', 'colRight'));
-$this->extend('Appearances.Admin/Common/index');
+
+$this->set(compact('colLeft'));
+$this->extend('Appearances.Admin/Common/form');

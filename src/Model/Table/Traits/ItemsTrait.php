@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Menus\Model\Table;
+namespace Menus\Model\Table\Traits;
 
 use App\ApplicationMap;
 use Cake\Core\Plugin;

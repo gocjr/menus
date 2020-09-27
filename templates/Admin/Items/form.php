@@ -41,7 +41,7 @@ $this->Html->script('/vendor/gocjr/items-input-links', ['block' => 'script']);
 $this->Html->script('/vendor/gocjr/items-input-icons', ['block' => 'script']);
 
 $this->set(compact('colLeft', 'colRight'));
-$this->extend('Appearances.Admin/Common/index');
+$this->extend('Appearances.Admin/Common/form');
 ?>
 
 

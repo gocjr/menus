@@ -1,48 +1,33 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $menus
- */
+
+$trRows[] = 'text-center w-5';
+$trRows[] = 'd-none d-sm-none d-md-none d-lg-table-cell d-xl-table-cell';
+$trRows[] = 'p-0';
+
+$this->assign('title', $menu->title);
+$this->extend('Appearances.Admin/Common/index');
+
+$this->start('before.actions');
+echo $this->Html->link('Menus', ['action' => 'index', 'controller' => 'menus'], ['class' => 'btn btn-warning', 'icon' => 'caret-square-left']);
+$this->end();
 ?>
-<div class="menus index content">
-    <?= $this->Html->link(__('New Menu'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Menus') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('title') ?></th>
-                    <th><?= $this->Paginator->sort('slug') ?></th>
-                    <th><?= $this->Paginator->sort('item_count') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($menus as $menu): ?>
-                <tr>
-                    <td><?= $this->Number->format($menu->id) ?></td>
-                    <td><?= h($menu->title) ?></td>
-                    <td><?= h($menu->slug) ?></td>
-                    <td><?= $this->Number->format($menu->item_count) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $menu->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $menu->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $menu->id], ['confirm' => __('Are you sure you want to delete # {0}?', $menu->id)]) ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
-</div>
+
+
+<!--table.thead.tr-->
+<?php $this->start('thread'); ?>
+<th class="<?= $trRows[1] ?>"><?= $this->Paginator->sort('id') ?></th>
+<th><?= $this->Paginator->sort('title', __('Title')) ?></th>
+<th><?= $this->Paginator->sort('item_count') ?></th>
+<th class="actions"><?= __('Actions') ?></th>
+<?php $this->end(); ?>
+
+<!--table.tbody.tr-->
+<?php $this->start('tbody'); ?>
+<td class="<?= $trRows[1] ?>">{{ $this->Number->format($row->id) }}</td>
+<td>{{ $row->title . $this->Html->small($row->slug, ['class' => 'd-block']) }}</td>
+<td>{{ h($row->item_count) }}</td>
+<td class="actions">
+    {{ $this->element('bootstrap4/link/view') }} -
+    {{ $this->element('bootstrap4/link/edit') }}
+</td>
+<?php $this->end(); ?>

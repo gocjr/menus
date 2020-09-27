@@ -20,13 +20,6 @@ $this->viewVars['crumbs'] =  $crumbs;
 
 ?>
 
-<div class="btn-group btn-group-sm">
-    <?= $this->element('Bootstrap4/btn/back', ['url' => $urls[0]]) ?>
-    <?= $this->element('Bootstrap4/btn/add', ['url' => $urls[1]]) ?>
-    <?= $this->element('Bootstrap4/btn/edit', ['url' => $urls[2]]) ?>
-    <?= $this->element('Bootstrap4/btn/delete', ['url' => $urls[3]]) ?>
-</div>
-
 <table class="table table-bordered table-striped table-xl-responsive mt-2">
     <tr>
         <th><?= __('Id') ?></th>
