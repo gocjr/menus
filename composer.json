@@ -1,8 +1,15 @@
 {
-    "name": "your-name-here/Menus",
+    "name": "gocjr/menus",
     "description": "Menus plugin for CakePHP",
     "type": "cakephp-plugin",
     "license": "MIT",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "gocjr",
+            "email": "giovaniocjr@gmail.com"
+        }
+    ],
     "require": {
         "cakephp/cakephp": "^4.0"
     },
@@ -19,5 +26,7 @@
             "Menus\\Test\\": "tests/",
             "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
