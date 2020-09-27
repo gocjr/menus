@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Model\Table\Schemas;
+namespace App\Model\Schema;
 
-use Cake\Database\Query;
 use Cake\ORM\TableRegistry;
 
 /**
